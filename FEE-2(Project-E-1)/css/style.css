@@ -98,18 +98,20 @@ nav ul li:hover {
     width: 98%;
 }
 
-#movie-selection-t {
-    /*background-color: #fff; */
-    position: relative;
-    /* z-index: -1; */
-    height: 360px;
-    width: 100%;
-    /* bottom: -509px; */
-    padding: 12px 23px;
-    /* padding-top: 34px; */
-    /* background-color: #000; */
-    margin-bottom: 10px;
-}
+
+    #movie-selection-t {
+        /* background-color: #fff; */
+        position: relative;
+        /* z-index: -1; */
+        height: 537px;
+        width: 100%;
+        /* bottom: -509px; */
+        padding: 12px 23px;
+        /* padding-top: 34px; */
+        /* background-color: #000; */
+        margin-bottom: 10px;
+    }
+
 
 #movie-selection-t>h1 {
     font-weight: normal;
@@ -127,7 +129,7 @@ nav ul li:hover {
     overflow: scroll;
     border-radius: 12px;
     overflow-y: hidden;
-    gap: 81px;
+    gap: 0;
     padding: 0px 64px
 }
 
@@ -168,7 +170,7 @@ nav ul li:hover {
     overflow: scroll;
     border-radius: 8px;
     overflow-y: hidden;
-    gap: 34px;
+    gap: 0px;
     padding: 0px 20px;
 }
 
@@ -180,7 +182,7 @@ nav ul li:hover {
     /*background-color: #fff; */
     position: relative;
     /* z-index: -1; */
-    height: 349px;
+    height: 547px;
     width: 100%;
     /* bottom: -509px; */
     padding: 12px 23px;
@@ -423,7 +425,7 @@ nav ul li:hover {
         overflow: scroll;
         border-radius: 8px;
         overflow-y: hidden;
-        gap: 34px;
+        gap: 0px;
         padding: 0px 20px;
     }
 
@@ -730,3 +732,4 @@ hr {
     margin-top: 57px;
     border: 1px solid #A1887F;
 }
+
