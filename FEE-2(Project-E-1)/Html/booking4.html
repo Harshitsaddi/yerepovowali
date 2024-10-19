@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail - BookMyShow Clone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/booking.css">
+</head>
+<body>
+    <nav id="navbar">
+        <ul id="navbar-right">
+            <div class="logo"><span id="name">FlixGot</span>
+                <i class="fa-solid fa-clapperboard" id="img"></i>
+            </div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Theatre</a></li>
+            <li><a href="#">City</a></li>
+            <input type="text" placeholder="Search Movies" id="search">
+        </ul>
+        <ul id="navbar-left">
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <button id="LogSign" class="btn">Login/Sign Up</button>
+        </ul>
+    </nav>
+
+    <div class="movie-detail-container">
+        <div class="movie-banner">
+            <div class="poster-card">
+                <div class="container">
+                    <!-- Image that the user clicks to trigger the video -->
+                    <img id="thumbnail" src="../Files/images/stree2.jpg" alt="Movie Poster" class="thumbnail">
+                   
+                    
+                    <!-- Hidden video element -->
+                    <div class="video-wrapper" id="videoWrapper">
+                        <video id="myVideo" width="800" height="450" controls>
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <img src="../Files/images/pixelcut-export.jpeg" alt="Movie Banner" class="banner-img">
+            <div class="overlay">
+                <h1>Movie Title</h1>
+                <p>Genre: Action, Adventure | Duration: 2h 30m</p>
+                <div class="rating-book">
+                    <div class="rating-container">
+                        <div class="live-rating">
+                            <span id="average-rating">8.5</span>/10
+                        </div>
+                        <div class="user-rating">
+                            <span>Rate this movie:</span>
+                            <div class="stars">
+                                <span data-value="1">&#9733;</span>
+                                <span data-value="2">&#9733;</span>
+                                <span data-value="3">&#9733;</span>
+                                <span data-value="4">&#9733;</span>
+                                <span data-value="5">&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="book-now" onclick="window.location.href='booktickets.html'">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <h2 style="color: aliceblue;">About the Movie</h2>
+            <p style="color: aliceblue;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquet magna, sed tincidunt lorem pretium sit amet. Morbi nec nisi vehicula, congue sem a, tempor lectus.</p>
+
+            <h2 style="color: aliceblue;">Cast & Crew</h2>
+            <ul>
+               <li style="color: aliceblue;">Director: John Doe</li>
+                <li style="color: aliceblue;">Cast: Jane Doe, John Smith, Emma Brown</li>
+            </ul>
+
+            <h2 style="color: aliceblue;">Showtimes</h2>
+            <p style="color: aliceblue;">Select your preferred time and theater:</p>
+            <ul>
+                <li style="color: aliceblue;">Theater 1 - 12:00 PM, 3:00 PM, 6:00 PM</li>
+                <li style="color: aliceblue;">Theater 2 - 1:00 PM, 4:00 PM, 7:00 PM</li>
+            </ul>
+        </div>
+<hr>
+
+<br>
+<h2 style="color: aliceblue;">You might also like</h2>
+<br>
+
+        <div class="slider-container">
+            <button class="slider-btn prev-btn" onclick="movePrev()">&#10094;</button>
+            <div class="slider" id="slider">
+                <img src="../Files/images/3.jpeg" alt="Movie 1">
+                <img src="../Files/images/stree2.jpg" alt="Movie 2">
+                <img src="../Files/images/stree2.jpg" alt="Movie 3">
+                <img src="../Files/images/stree2.jpg" alt="Movie 4">
+                <img src="../Files/images/deadpool.png" alt="Movie 1"> 
+                <img src="../Files/images/4.jpeg" alt="Movie 2"> 
+            </div>
+            <button class="slider-btn next-btn" onclick="moveNext()">&#10095;</button>
+        </div>
+        
+        
+    </div>
+
+    <div id="video-overlay">
+        <div class="video-container">
+            <button id="close-video" class="close-btn">&times;</button>
+            <video controls>
+                <source src="Deadpool.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Flixgot</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="../Files/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../Files/images/x2-removebg-preview.png" alt="Twitter"  style="margin-bottom: 5px;"></a>
+                <a href="#"><img src="../Files/images/bulbul-removebg-preview.png" alt="Instagram" ></a>
+                <a href="#"><img src="../Files/images/in-removebg-preview.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-contact">
+                <p>Contact Us: support@moviescape.com</p>
+                <p>Call Us: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flixgot. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+    
+    <script src="../js/script1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+</html>
