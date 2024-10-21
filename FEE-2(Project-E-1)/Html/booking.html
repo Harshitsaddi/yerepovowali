@@ -29,7 +29,20 @@
     <div class="movie-detail-container">
         <div class="movie-banner">
             <div class="poster-card">
-                <img src="../Files/images/deadpool.png" alt="Movie Poster" class="movie-poster" style="width: 250px;">
+                <div class="container">
+                    <!-- Image that the user clicks to trigger the video -->
+                    <img id="thumbnail" src="../Files/images/deadpool.png" alt="Movie Poster" class="thumbnail">
+                   
+                    
+                    <!-- Hidden video element -->
+                    <div class="video-wrapper" id="videoWrapper">
+                        <button class="close-btn" id="closeBtn">&times;</button>
+                        <video id="myVideo" width="800" height="450" controls>
+                            <source src="../Files/vedio/WhatsApp Video 2024-08-30 at 1.17.03 PM.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
             <img src="../Files/images/deadpoolwol.avif" alt="Movie Banner" class="banner-img">
             <div class="overlay">
@@ -134,5 +147,6 @@
     </div>
     
     <script src="../js/script1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </body>
 </html>

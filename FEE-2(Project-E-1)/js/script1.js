@@ -129,18 +129,50 @@ function movePrev() {
 
 
 
-document.querySelector('.movie-poster').addEventListener('click', function() {
-    document.getElementById('video-overlay').classList.add('active');
-    document.getElementById('movie-trailer').play();
+const thumbnail = document.getElementById('thumbnail');
+const videoWrapper = document.getElementById('videoWrapper');
+const video = document.getElementById('myVideo');
+
+// Add click event listener to the image (movie poster)
+thumbnail.addEventListener('click', function() {
+    // Show the video wrapper
+    videoWrapper.style.display = 'block';
+
+    // GSAP animation to pop up the video
+    gsap.to(videoWrapper, { 
+        duration: 0.8, 
+        scale: 1, 
+        ease: "power3.out",
+        onComplete: function() {
+            video.play();  // Play the video after the animation completes
+        }
+    });
 });
 
-document.getElementById('video-overlay').addEventListener('click', function(e) {
-    if (e.target === this || e.target.tagName === 'VIDEO') {
-        document.getElementById('movie-trailer').pause();
-        document.getElementById('movie-trailer').currentTime = 0;
-        document.getElementById('video-overlay').classList.remove('active');
-    }
+// Optional: You could add a way to close the video or hide it after it's finished playing
+video.addEventListener('ended', function() {
+    gsap.to(videoWrapper, { 
+        duration: 0.5, 
+        scale: 0, 
+        ease: "power3.in", 
+        onComplete: function() {
+            videoWrapper.style.display = 'none';  // Hide the video after it shrinks down
+        }
+    });
 });
-document.getElementById('close-video').addEventListener('click', function() {
-    document.getElementById('video-overlay').classList.remove('active');
+
+document.getElementById("thumbnail").addEventListener("click", function() {
+    // Show the video when thumbnail is clicked
+    document.getElementById("videoWrapper").style.display = "block";
 });
+
+document.getElementById("closeBtn").addEventListener("click", function() {
+    // Hide the video and stop it when the close button is clicked
+    document.getElementById("videoWrapper").style.display = "none";
+    
+    let video = document.getElementById("myVideo");
+    video.pause();  // Pause the video
+    video.currentTime = 0;  // Reset video to the beginning
+});
+
+
