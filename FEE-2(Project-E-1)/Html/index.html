@@ -8,14 +8,75 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/utils.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/cards.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" ></script>
 </head>
-
-
-
 <body>
     <div id="container">
-        <video src="../Files/vedio/WhatsApp Video 2024-08-30 at 1.17.03 PM.mp4" id="video" autoplay muted></video>
+        <video src="../Files/vedio/1.mp4" id="video" autoplay="true" muted></video>
+        <div id="city" style="display: none;">
+            <div class="location-detect" style="filter: invert(1); display: flex; justify-content: space-between;">
+                <div>
+                    <i class="fa fa-map-marker-alt" style="color: #e74c3c; filter: invert(1);"></i>
+                <span style="filter: invert(1); color: #e74c3c;">Detect my location</span>
+                </div>
+                <div class="close-btn">
+                    <div id="cross">&#10005;</div>
+                </div>
+            </div>
+            <input type="text" placeholder="Search for your city" id="citySearch">
+            <div class="popular-cities">
+                <div class="cityAbout">
+                    <i class="fa fa-archway"></i>
+                    <span>Mumbai</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-monument"></i>
+                    <span>Delhi-NCR</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-building"></i>
+                    <span>Bengaluru</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-fort-awesome"></i>
+                    <span>Hyderabad</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-landmark"></i>
+                    <span>Ahmedabad</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-tree"></i>
+                    <span>Chandigarh</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa-solid fa-gopuram"></i>
+                    <span>Chennai</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-university"></i>
+                    <span>Pune</span>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-city"></i>
+                    <span>Kolkata</span>
+                </div>
+                <div class="cityAbout"">
+                    <i class="fa fa-water"></i>
+                    <span>Kochi</span>
+                </div>
+            </div>
+            
+            <div class="view-all">
+                <a href="#">View All Cities</a>
+            </div>
+        </div>
+        
+        <div id="nextBtn">
+            &gt;
+        </div>
         <nav id="navbar">
             <ul id="navbar-right">
                 <div class="logo"><span id="name">FixGot</span>
@@ -23,7 +84,7 @@
                 </div>
                 <li><a href="index.html">Home</a></li>
                 <li id="th"><a href="#">Theatre</a></li>
-                <li><a href="#">City</a></li>
+                <li><a href="#" id="cityPage">City</a></li>
                 <input type="text" placeholder="Search Movies" id="search">
             </ul>
             <ul id="navbar-left">
@@ -32,6 +93,7 @@
                 <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
             </ul>
         </nav>
+        </script>
         <div id="movie-about">
             <div id="movie-name" class="font1">Deadpool And Wolverine</div>
             <div id="movie-desc" class="font2">"Deadpool 3" (2024) brings Deadpool into the Marvel Cinematic Universe
@@ -735,7 +797,7 @@
             <p>&copy; 2024 Flixgot. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="../js/index.js"></script>
     <script src="https://kit.fontawesome.com/28d81d093f.js" crossorigin="anonymous"></script>
 </body>
 
