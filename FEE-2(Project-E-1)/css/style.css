@@ -33,7 +33,7 @@ body {
 
 
 #container {
-    height: 61%;
+    height: 71vh;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -46,7 +46,7 @@ body {
 
 
 #video {
-    height: 100%;
+    height: 71vh;
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -83,7 +83,7 @@ nav ul li:hover {
     color: #fff;
     /* background-color: orchid; */
     width: 42%;
-    margin: 49px 43px;
+    margin: 69px 43px;
     padding: 14px 17px;
 }
 
@@ -325,6 +325,7 @@ nav ul li:hover {
         width: 84%;
         margin: 49px 43px;
         padding: 14px 17px;
+        /* height: 452px; */
     }
 
     #movie-name {
@@ -340,7 +341,7 @@ nav ul li:hover {
 
     #movie-selection-t {
         position: relative;
-        height: 360px;
+        height: 537px;
         width: 100%;
         padding: 12px 23px;
         margin-bottom: 10px;
@@ -405,7 +406,7 @@ nav ul li:hover {
 
     .movie-section {
         position: relative;
-        height: 349px;
+        height: 537px;
         width: 100%;
         padding: 12px 23px;
         margin-top: 10px;
@@ -559,7 +560,7 @@ nav ul li:hover {
 
     #movie-selection-t {
         position: relative;
-        height: 360px;
+        height: 562px;
         width: 100%;
         padding: 12px 23px;
         margin-bottom: 10px;
@@ -624,7 +625,7 @@ nav ul li:hover {
 
     .movie-section {
         position: relative;
-        height: 349px;
+        height: 562px;
         width: 100%;
         padding: 12px 23px;
         margin-top: 10px;
@@ -821,6 +822,17 @@ hr {
     font-size: 3rem;
     position: absolute;
     right: 43px;
-    top: 240px;
+    top: 222px;
     cursor: pointer;
+    font-weight: bold;
+    width: 52px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-out;
+    display: none;
+}
+
+#nextBtn:hover{
+    /* display: block; */
+    background: rgb(14, 14, 14);
 }
