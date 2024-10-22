@@ -813,6 +813,22 @@ hr {
     background-color: #282626;
 }
 
+.cityAbout {
+    position: relative; /* Ensure absolute positioning works */
+}
+
+.cityAbout:hover .theater-info {
+    display: block; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3; 
+}
+
 .cityAbout{
     cursor: pointer;
 }
@@ -836,3 +852,75 @@ hr {
     /* display: block; */
     background: rgb(14, 14, 14);
 }
+#video.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+#video.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.cityAbout{
+    color: #000;
+}
+
+#video.slide-out,
+#movie-about.slide-out {
+    animation: slideOut 0.2s forwards;
+}
+
+#video.slide-in,
+#movie-about.slide-in {
+    animation: slideIn 0.2s forwards;
+}
+
+#movie-about.slide-out {
+    animation: slideOut 0.2s forwards;
+}
+
+#movie-about.slide-in {
+    animation: slideIn 0.2s forwards;
+}
+
+.cityAbout {
+    position: relative; /* Ensure absolute positioning works */
+}
+
+.cityAbout:hover .theater-info {
+    display: block; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.theater-info {
+    display: none;
+}
+

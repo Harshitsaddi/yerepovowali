@@ -31,13 +31,10 @@ cityPage.addEventListener("click", () => {
 cityAbout.forEach(about => {
     about.addEventListener("click", () => {
         cityPage.innerHTML = about.children[1].innerHTML;
-        city.style.display = "none";
+        // city.style.display = "none";
     });
 });
 
-nextBtn.addEventListener("click", () => {
-
-})
 
 citySearchBox.addEventListener("input", () => {
     const searchVal = citySearchBox.value.toLowerCase();
@@ -52,20 +49,38 @@ citySearchBox.addEventListener("input", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-    if (index == 5) {
-        index = 0;
-        video.src = `../Files/vedio/${movies[index].index}.mp4`;
-        movieName.innerHTML = movies[index].title;
-        movieDesc.innerHTML = movies[index].summary;
-    }
-    else {
+    const movieAbout = document.getElementById("movie-about");
+    
+    video.classList.add("slide-out");
+    movieAbout.classList.add("slide-out");
+    container.classList.add("slide-out");
+
+    setTimeout(() => {
+        if (index == 4) {
+            index = 0;
+        } else {
+            index++;
+        }
+        
         video.src = `../Files/vedio/${movies[index].index}.mp4`;
         movieName.innerHTML = movies[index].title;
         movieDesc.innerHTML = movies[index].summary;
 
-    }
-    console.log(`../Files/vedio/${movies[index].index}.mp4`);
-    index++;
+        console.log(`../Files/vedio/${movies[index].index}.mp4`);
+
+        video.classList.remove("slide-out");
+        movieAbout.classList.remove("slide-out");
+        container.classList.remove("slide-out");
+
+        video.classList.add("slide-in");
+        movieAbout.classList.add("slide-in");
+        container.classList.add("slide-in");
+        setTimeout(() => {
+            video.classList.remove("slide-in");
+            movieAbout.classList.remove("slide-in");
+            container.classList.remove("slide-in");
+        }, 200);
+    }, 200);
 });
 
 container.addEventListener("mouseover", () => {
@@ -82,4 +97,21 @@ video.addEventListener("timeupdate", () => {
     if (video.currentTime == video.duration) {
         video.play();
     }
+});
+
+const cityAboutElements = document.querySelectorAll('.cityAbout');
+
+
+cityAboutElements.forEach(city => {
+    city.addEventListener('click', () => {
+        const theaterInfo = city.querySelector('.theater-info');
+        theaterInfo.style.display = theaterInfo.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!city.contains(event.target)) {
+            const theaterInfo = city.querySelector('.theater-info');
+            theaterInfo.style.display = 'none';
+        }
+    });
 });
