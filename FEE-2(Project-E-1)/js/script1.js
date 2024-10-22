@@ -127,6 +127,7 @@ function movePrev() {
 
 
 
+<<<<<<< HEAD
 document.querySelector('.movie-poster').addEventListener('click', function () {
     document.getElementById('video-overlay').classList.add('active');
     document.getElementById('movie-trailer').play();
@@ -141,4 +142,52 @@ document.getElementById('video-overlay').addEventListener('click', function (e) 
 });
 document.getElementById('close-video').addEventListener('click', function () {
     document.getElementById('video-overlay').classList.remove('active');
+=======
+const thumbnail = document.getElementById('thumbnail');
+const videoWrapper = document.getElementById('videoWrapper');
+const video = document.getElementById('myVideo');
+
+// Add click event listener to the image (movie poster)
+thumbnail.addEventListener('click', function() {
+    // Show the video wrapper
+    videoWrapper.style.display = 'block';
+
+    // GSAP animation to pop up the video
+    gsap.to(videoWrapper, { 
+        duration: 0.8, 
+        scale: 1, 
+        ease: "power3.out",
+        onComplete: function() {
+            video.play();  // Play the video after the animation completes
+        }
+    });
 });
+
+// Optional: You could add a way to close the video or hide it after it's finished playing
+video.addEventListener('ended', function() {
+    gsap.to(videoWrapper, { 
+        duration: 0.5, 
+        scale: 0, 
+        ease: "power3.in", 
+        onComplete: function() {
+            videoWrapper.style.display = 'none';  // Hide the video after it shrinks down
+        }
+    });
+});
+
+document.getElementById("thumbnail").addEventListener("click", function() {
+    // Show the video when thumbnail is clicked
+    document.getElementById("videoWrapper").style.display = "block";
+>>>>>>> 7f5d12a6bca3fc2df38bace49042d98b32ff4716
+});
+
+document.getElementById("closeBtn").addEventListener("click", function() {
+    // Hide the video and stop it when the close button is clicked
+    document.getElementById("videoWrapper").style.display = "none";
+    
+    let video = document.getElementById("myVideo");
+    video.pause();  // Pause the video
+    video.currentTime = 0;  // Reset video to the beginning
+});
+
+
