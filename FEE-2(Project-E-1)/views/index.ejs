@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FixGot - A Movie Booking Website</title>
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/utils.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cards.css"></script>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cards.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
@@ -66,21 +66,25 @@
             <i class="fas fa-chevron-right"></i>
         </div>
         <nav id="navbar">
-            <ul id="navbar-right">
-                <div class="logo"><span id="name">FixGot</span>
-                    <i class="fa-solid fa-clapperboard" id="img"></i>
-                </div>
+            <div class="logo"><span id="name">FixGot</span>
+                <i class="fa-solid fa-clapperboard" id="img"></i>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul id="navbar-right" class="navbar-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#" id="th">Theatre</a></li>
                 <li><a href="#" id="cityPage">City</a></li>
                 <input type="text" placeholder="Search Movies" id="search">
             </ul>
-            <ul id="navbar-left">
+            <ul id="navbar-left" class="navbar-menu">
                 <li id="about"><a href="aboutus.html">About Us</a></li>
                 <li id="contact"><a href="contact.html">Contact Us</a></li>
                 <button id="LogSign" class="btn" onclick="window.location.href='login.html'">Login/Sign Up</button>
             </ul>
         </nav>
+        
         </script>
         <div id="movie-about">
             <div id="movie-name" class="font1">Deadpool And Wolverine</div>
