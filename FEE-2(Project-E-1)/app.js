@@ -84,5 +84,20 @@ app.get('/home', (req, res) => {
     res.render('index');
 });
 
+app.get('/booking', (req, res) => {
+    res.render('booking');
+});
+
+app.get('/book?:id', (req, res) => {
+    res.render('book');
+});
+
+app.get('/about', (req, res) => { 
+    res.render('aboutus');
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
 
 app.listen(80);
