@@ -38,6 +38,11 @@ Array.from(document.getElementsByClassName('date_point')).forEach((el) => {
     }
 })
 
+const currentDate = new Date();
+const dayOfMonth = currentDate.getDate();
+console.log(dayOfMonth); // Outputs the current day of the month (e.g., 11)
+
+
 let pvr = [
     {
         pvr: 'PVR Vegus',
@@ -57,7 +62,7 @@ let pvr = [
         b: [ 8, 5 ],
         a: [],
         price: [ 800, 800, 560, 560, 560, 560, 430, 430 ],
-        date: 24,
+        date: dayOfMonth,
         img: '/images/jawan.jpg',
         video: '/vedio/Jawan Official Trailer-(HDvideo9).mp4',
         background: '/images/bg.png',
@@ -80,7 +85,7 @@ let pvr = [
         b: [ 8, 5 , 12, 13, 14],
         a: [],
         price: [ 800, 800, 560, 560, 560, 560, 430, 430 ],
-        date: 24,
+        date: 11,
         img: '/images/Gadar2.jpg',
         video: '/vedio/Gadar2 Official Trailer - 11th August - Sunny Deol - Ameesha Patel - Anil Sharma - Zee Studios.mp4',
         background: '../Files/images/gadar_bg.jpg',

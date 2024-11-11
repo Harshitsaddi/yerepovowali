@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('config');
+const dbgr = require('debug')("development:mongoose");
 
-mongoose.connect(`${config.get('MONGODB_URL')}/movie-booking`).then(() => {
-    console.log('Connected to MongoDB...');
+module.exports = mongoose.connect(`${config.get('MONGODB_URL')}/movie-booking`).then(() => {
+    dbgr('Connected to MongoDB...');
 }).catch(err => {
-    console.log(err);
+    dbgr(err);
 });

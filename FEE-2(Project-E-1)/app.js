@@ -1,4 +1,6 @@
 const express = require('express');
+require('dotenv').config();
+const db = require('./config/mongooseConfig');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
@@ -8,8 +10,8 @@ const session = require('express-session');
 const port = process.env.PORT || 3000;
 const app = express();
 const userModel = require('./models/userModel');
-require('dotenv').config();
 
+// Middleware setup
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.json());
@@ -21,10 +23,12 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// Set EJS as template engine
 app.set('view engine', 'ejs');
 
+// Routes for backend logic
 app.get('/', (req, res) => {
-    let user; 
+    let user;
     if (req.cookies.token) {
         try {
             user = jwt.verify(req.cookies.token, process.env.JWT_KEY); // Verify the token
@@ -35,11 +39,11 @@ app.get('/', (req, res) => {
         user = { email: "", username: "" };
     }
     console.log(user);
-    res.render('index', { user }); 
+    res.render('index', { user });
     req.flash("error", "");
 });
 
-
+// Handle login
 app.post('/login', async (req, res) => {
     let { email, password } = req.body;
     let user = await userModel.findOne({ email: email });
@@ -51,15 +55,16 @@ app.post('/login', async (req, res) => {
                 res.redirect('/');
             } else {
                 req.flash("error", "Invalid email or password");
-                res.redirect('/login'); 
+                res.redirect('/login');
             }
         });
     } else {
         req.flash("error", "Invalid email or password");
-        res.redirect('/login'); 
+        res.redirect('/login');
     }
 });
 
+// Handle user creation
 app.post('/create', async (req, res) => {
     let { name, email, password } = req.body;
     bcrypt.genSalt(10, (err, salt) => {
@@ -81,70 +86,68 @@ app.post('/create', async (req, res) => {
                 res.redirect('/');
             } else {
                 req.flash("error", "Email already exists");
-                res.redirect('/');
+                res.redirect('/login');
             }
         });
     });
 });
 
+// Login page
 app.get('/login', (req, res) => {
-    let user; // Declare user variable
+    let user;
+    let err = req.flash('error');
     if (req.cookies.token) {
         try {
-            user = jwt.verify(req.cookies.token, process.env.JWT_KEY); 
+            user = jwt.verify(req.cookies.token, process.env.JWT_KEY);
         } catch (err) {
-            user = { email: "", username: "" }; 
+            user = { email: "", username: "" };
         }
     } else {
-        user = { email: "", username: "" }; 
+        user = { email: "", username: "" };
     }
-    res.render('login', { user, err: '' });
+    res.render('login', { user, err });
 });
 
-
+// Other routes (booking, about, etc.)
 app.get('/booking', (req, res) => {
-    let user; // Declare user variable
+    let user;
     if (req.cookies.token) {
         try {
-            user = jwt.verify(req.cookies.token, process.env.JWT_KEY); 
+            user = jwt.verify(req.cookies.token, process.env.JWT_KEY);
         } catch (err) {
-            user = { email: "", username: "" }; 
+            user = { email: "", username: "" };
         }
     } else {
-        user = { email: "", username: "" }; 
+        user = { email: "", username: "" };
     }
-    res.render('booking', {user});
+    res.render('booking', { user });
 });
 
+// Book route (example with dynamic URL parameter)
 app.get('/book?:id', (req, res) => {
     res.render('book');
 });
 
-app.get('/about', (req, res) => { 
+// About route
+app.get('/about', (req, res) => {
     res.render('aboutus');
 });
 
-app.get('/contact', (req, res) => {
-    let user; // Declare user variable
-    if (req.cookies.token) {
-        try {
-            user = jwt.verify(req.cookies.token, process.env.JWT_KEY); 
-        } catch (err) {
-            user = { email: "", username: "" }; 
-        }
-    } else {
-        user = { email: "", username: "" }; 
-    }
-    res.render('contact', { user }); // Pass user to the view
-});
-
-
-
-app.post('/logout', (req, res) => { 
+// Logout route
+app.post('/logout', (req, res) => {
     res.clearCookie('token');
     res.redirect('/');
-})
+});
 
+// Catch-all for React front-end route handling
+app.use(express.static(path.join(__dirname, 'client', 'build'))); // Serve static files
+
+// Serve React index.html for any routes that React handles
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
+// Start server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
