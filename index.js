@@ -1,2 +1,2 @@
-const { greet } = require ("./App");
+const { greet } = require('./App');
 console.log(greet("Student"));
