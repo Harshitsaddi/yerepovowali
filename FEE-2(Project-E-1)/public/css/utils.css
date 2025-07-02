@@ -1,0 +1,54 @@
+.max-width-1{
+    max-width: 83%;
+}
+
+.m-auto{
+    margin: auto
+}
+
+.width-100{
+    width: 100%;
+}
+
+.p-lr-20{
+    padding: 0px 20px;
+}
+
+.height-100{
+    height: 100%;
+}
+
+.width-50{
+    width: 50%;
+}
+
+.m-auto-lr{
+    margin-bottom:-44px;
+    ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+/* .bg-main{
+    color:white;
+    background-color: #10002B;
+} */
+
+.bg-nav{
+    background-color: #240046;
+    color: white;
+}
+
+.c-text{
+    color: white;
+}
+
+.bg-btn{
+    background-color: #FDD835;
+}
+
+.bg-btn-color{
+    color: #10002B;
+    font-weight: bold;
+}

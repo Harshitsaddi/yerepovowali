@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlixGot - A Movie Booking Website</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cards.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <video src="/vedio/1.mp4" id="video" autoplay="true" muted></video>
+        <div id="city" style="display: none;">
+            <div class="location-detect" style="filter: invert(1); display: flex; justify-content: space-between;">
+                <div>
+                    <i class="fa fa-map-marker-alt" style="color: #e74c3c; filter: invert(1);"></i>
+                    <span style="filter: invert(1); color: #e74c3c;">Detect my location</span>
+                </div>
+                <div class="close-btn">
+                    <div id="cross">&#10005;</div>
+                </div>
+            </div>
+            <input type="text" placeholder="Search for your city" id="citySearch">
+            <div class="popular-cities">
+                <div class="cityAbout">
+                    <i class="fa fa-archway"></i>
+                    <span>Mumbai</span>
+                    <div class="theater-info" style="display: none;">
+                        <p style="color: black; font-size: x-small;">Theater 1</p>
+                        <p style="color: black; font-size: x-small;">Theater 2</p>
+                        <p style="color: black; font-size: x-small;">Theater 3</p>
+                    </div>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-monument"></i>
+                    <span>Delhi-NCR</span>
+                    <div class="theater-info" style="display: none;">
+                        <p style="color: black; font-size: x-small;">Theater A</p>
+                        <p style="color: black; font-size: x-small;">Theater B</p>
+                        <p style="color: black; font-size: x-small;">Theater C</p>
+                    </div>
+                </div>
+                <div class="cityAbout">
+                    <i class="fa fa-building"></i>
+                    <span>Bengaluru</span>
+                    <div class="theater-info" style="display: none; color: black;">
+                        <p style="color: black; font-size: x-small;">Theater X</p>
+                        <p style="color: black; font-size: x-small;">Theater Y</p>
+                        <p style="color: black; font-size: x-small;">Theater Z</p>
+                    </div>
+                </div>
+                <!-- Add similar sections for other cities -->
+            </div>
+        
+            <div class="view-all">
+                <a href="#">View All Cities</a>
+            </div>
+        </div>
+        
+        <div id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <nav id="navbar">
+            <ul id="navbar-right">
+                <div class="logo"><span id="name">FlixGot</span>
+                    <i class="fa-solid fa-clapperboard" id="img"></i>
+                </div>
+                <li><a href="/">Home</a></li>
+                <li><a href="#" id="th">Theatre</a></li>
+                <li><a href="#" id="cityPage">City</a></li>
+                <input type="text" placeholder="Search Movies" id="search">
+            </ul>
+            <ul id="navbar-left">
+                <li id="about"><a href="/about">About Us</a></li>
+                <li id="contact"><a href="/contact">Contact Us</a></li>
+                <button id="LogSign" class="btn" onclick="window.location.href='/login'">
+                    <%= (user.username !== "") ? user.username : "Login/Sign Up" %>
+                </button>
+                
+            </ul>
+        </nav>
+        
+        </script>
+        <div id="movie-about">
+            <div id="movie-name" class="font1">Deadpool And Wolverine</div>
+            <div id="movie-desc" class="font2">Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.</div>
+            <button class="btn" id="book" onclick="window.location.href='/booking'">Book Now</button>
+        </div>
+    </div>
+
+    <div id="movie-selection-t">
+        <h1 class="font1">Trending:</h1>
+        <div class="card-sections" id="trending">
+            <!-- <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/1.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Deadpool Wolverine</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/2.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Blody Daddy</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/3.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Khel Khel Mein</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/4.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Stree 2</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/ant man.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Ant Man</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/avatar1.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Avatar </h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/eesho.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>eesho</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/eternals.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Eternals</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/Gadar2.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Gadar 2</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/jailer.webp" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Jailer</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-section">
+        <h1 class="font1">New Releases:</h1>
+        <div class="card-sections" id="newRelease">
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/jawan.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Jawan</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/bol.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Bol Bachan</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/jurassic world1.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Jurassic World</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/KGF.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>KGF</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/Kota Factory.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Kota Facctory</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/money heist.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Money Hrist</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-section">
+        <h1 class="font1">UpComing:</h1>
+        <div class="card-sections" id="upComing">
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/moon knight1.webp" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Moon Knight</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/poster_1.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>First Reformed</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/spiderman.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Spider Man</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/stree2.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Stree 2</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/subedar.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Subedar</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/the boys.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>The Boys</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-section">
+        <h1 class="font1">Others:</h1>
+        <div class="card-sections" id="other">
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/thor love of thunder.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Thor Love and Thunder</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/topgun.jpg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Top Gun</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/uncharted.webp" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Uncharted </h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/pathan.png" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Pathan</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/logan.jpeg" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Logan</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="poster"><img src="/images/tickty.png" alt="Location Unknown">
+                    </div>
+                    <div class="details">
+                        <h1>Tickty Mickty</h1>
+                        <h2>2021 • R • 1hr 41min</h2>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag yellow">Teen</span>
+                            <span class="tag">Comedy</span>
+                            <span class="tag blue">Drama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Flixgot</h2>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/images/x2-removebg-preview.png" alt="Twitter"
+                        style="margin-bottom: 5px;"></a>
+                <a href="#"><img src="/images/bulbul-removebg-preview.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/in-removebg-preview.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-contact">
+                <p>Contact Us: support@moviescape.com</p>
+                <p>Call Us: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flixgot. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/28d81d093f.js" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/Gsap.js"></script>
+</body>
+
+</html>

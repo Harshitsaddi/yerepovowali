@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+#navbar{
+    /* background-color: black; */
+    width: 100%;
+    height: 12%;
+    color: #fff;
+    font-family: "Roboto Mono", monospace;
+    display: flex;
+}
+
+#navbar-right{
+    display: flex;
+    width: 70%;
+    list-style: none;
+    padding: 12px 23px;
+    /* background-color: orange; */
+}
+
+#navbar-right li{
+    padding: 2px 0px;
+    margin-right: 23px;
+    cursor: pointer;
+}
+
+.logo{
+    padding-right: 51px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#navbar-right li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+#search{
+    width: 61%;
+    outline: none;
+    border: 2px solid antiquewhite;
+    background-color: transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 7px 6px;
+    position: absolute;
+    right: -56px;
+    top: 8px;
+    color: beige;
+}
+
+#search::placeholder{
+    color: #fff;
+}
+
+#navbar-left{
+    position: absolute;
+    right: 4px;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: orange; */
+    list-style: none;
+    top: 14px;
+    padding: 0px 33px;
+}
+
+#navbar-left li{
+    padding: 2px 0px;
+    margin-right: 23px;
+    cursor: pointer;
+}
+
+#navbar-left li a{
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.5s;
+    color: #fff;
+}
+
+@media only screen and (max-width:1200px){
+    #search{
+        width: 37%;
+        outline: none;
+        border: 2px solid antiquewhite;
+        background-color: transparent;
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 2px 6px;
+        position: absolute;
+        right: 92px;
+        top: 8px;
+        color: beige;
+    }
+    #navbar-left li a{
+        font-size: 10px;
+        text-decoration: none;
+        transition: all 0.5s;
+        color: #fff;
+    }
+    #navbar-right li a{
+        text-decoration: none;
+        font-size: 10px;
+        transition: all 0.5s;
+        color: #fff;
+    }
+    .logo{
+        padding-right: 51px;
+        margin-top: 6px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    #search::placeholder{
+        font-size: 10px;
+    }
+    .btn{
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+}
+
+@media only screen and (max-width:1165px){
+    #search{
+        width: 20%;
+        outline: none;
+        border: 2px solid antiquewhite;
+        background-color: transparent;
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 7px 6px;
+        position: absolute;
+        right: 92px;
+        top: 8px;
+        color: beige;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    #navbar {
+        width: 100%;
+        height: 12%;
+        color: #fff;
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+    }
+
+    #navbar-right {
+        display: flex;
+        width: 70%;
+        list-style: none;
+        padding: 12px 23px;
+    }
+
+    #navbar-right li {
+        padding: 2px 0px;
+        margin-right: 23px;
+        cursor: pointer;
+    }
+
+    .logo {
+        padding-right: 39px;
+        font-size: 10px;
+        font-weight: bolder;
+        margin-top: 9px;
+    }
+
+    #navbar-right li a {
+        text-decoration: none;
+        font-size: 8px;
+        transition: all 0.5s;
+        color: #fff;
+    }
+
+    #search {
+        width: 21%;
+        outline: none;
+        border: 2px solid antiquewhite;
+        background-color: transparent;
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 5px 2px;
+        position: absolute;
+        right: 56px;
+        top: 10px;
+        color: beige;
+    }
+
+    #search::placeholder {
+        color: #fff;
+    }
+
+    #navbar-left {
+        position: absolute;
+        right: 4px;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        top: 14px;
+        padding: 0px 23px;
+    }
+
+    #navbar-left li {
+        padding: 2px 0px;
+        margin-right: 23px;
+        cursor: pointer;
+    }
+
+    #navbar-left li a {
+        font-size: 10px;
+        text-decoration: none;
+        transition: all 0.5s;
+        color: #fff;
+    }
+
+    #th, #contact {
+        display: none;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+}
+
+
+
+@media only screen and (max-width: 460px) {
+    #navbar {
+        width: 100%;
+        height: 12%;
+        color: #fff;
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+    }
+
+    #navbar-right {
+        display: flex;
+        width: 70%;
+        list-style: none;
+        padding: 12px 23px;
+    }
+
+    #navbar-right li {
+        padding: 2px 0px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+
+    .logo {
+        padding-right: 10px;
+        font-size: 6px;
+        font-weight: bolder;
+        margin-top: 11px
+    }
+
+    #navbar-right li a {
+        text-decoration: none;
+        font-size: 6px;
+        transition: all 0.5s;
+        color: #fff;
+    }
+
+    #search {
+        width: 9%;
+        outline: none;
+        border: 2px solid antiquewhite;
+        background-color: transparent;
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 5px 2px;
+        position: absolute;
+        right: 98px;
+        top: 10px;
+        color: beige;
+    }
+
+    #search::placeholder {
+        color: #fff;
+        font-size: 6px;
+    }
+
+    #navbar-left {
+        position: absolute;
+        right: 4px;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        top: 14px;
+        padding: 0px 23px;
+    }
+
+    #navbar-left li {
+        padding: 2px 0px;
+        margin-right: 23px;
+        cursor: pointer;
+    }
+
+    #navbar-left li a {
+        font-size: 6px;
+        transition: all 0.5s;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    #th, #contact {
+        display: none;
+    }
+
+    .btn {
+    padding: 0px 5px;
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid white;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-right: 40px;
+    font-size: 7px;
+    }
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid white;
+}

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 8px; /* Reduced gap between cards */
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 262px;
+    height: 422px; /* Increased height for better visibility */
+    background: #1a1a1a; /* Darker background for better contrast */
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7); /* Stronger shadow for depth */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Slightly brighter border for visibility */
+    margin-bottom: 12px; /* Optional margin to create space below each card */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px); /* Adjusted for border */
+    height: calc(100% + 4px); /* Adjusted for border */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Soft glowing effect */
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+    z-index: 3;
+}
+
+.card:hover::before {
+    opacity: 1;
+    transform: scale(1.05); /* Slight hover effect */
+    cursor: pointer;
+}
+
+.poster {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px); /* Adjusted to fit within new card height */
+}
+
+.poster img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure full width of the wrapper */
+    height: 100%; /* Set to full height of the poster container */
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+.card:hover .poster img {
+   transform: scale(1.1); /* Slight zoom on hover */
+   transition: all .3s ease-in-out; /* Smooth transition */
+}
+
+.details {
+   position:absolute; 
+   bottom:0; /* Fixed to bottom of card */
+   left:0; 
+   width:100%; 
+   height:auto; /* Changed to auto to accommodate increased content */
+   padding:.75em; /* Increased padding for better spacing */
+   background-color:#000a; /* Semi-transparent background for contrast */
+   backdrop-filter: blur(16px) saturate(120%);
+   transition:.3s; 
+   color:#fff; 
+   z-index:2; 
+}
+
+.card:hover .details {
+   bottom:0; /* Slide in details on hover (optional) */
+    
+}
+
+.details h1,
+.details h2 {
+   font-weight:bold; 
+}
+
+.details h1 {
+   font-size:.9em; 
+   margin-bottom:.5em; /* Increased margin to create space below the heading */
+}
+
+.details h2 {
+   font-weight:.400; 
+   font-size:.85em; 
+   margin-bottom:.75em; /* Increased margin to create space above the rating */
+   opacity:.8; 
+}
+
+.details .rating {
+   position: relative; /* Changed to relative for better positioning */
+   margin-bottom:.75em; 
+   display:flex; 
+   gap:.25em; 
+}
+
+.details .rating i {
+   color:#e3c414; 
+}
+
+.details .rating span {
+   margin-left:.25em; 
+}
+
+.details .tags {
+   display:flex; 
+   gap:.375em; 
+   margin-bottom:.875em; 
+   font-size:.85em; 
+}
+
+.details .tags span {
+   padding:.35rem .65rem; 
+   color:#fff; 
+   border:.75px solid rgba(255,255,255,.5); /* Slightly brighter tag borders */
+   border-radius:50px; 
+}
+
+.details .desc {
+   color:#fff; 
+   opacity:.8; 
+   line-height:1.5; 
+   margin-bottom:.75em; 
+}
+
+.details .cast h3 {
+   margin-bottom:.5em; 
+}
+
+.details .cast ul {
+   position:absolute; 
+   display:flex; 
+   flex-wrap:wrap; 
+   gap:.625rem; 
+   width:100%; 
+}
+
+.details .cast ul li {
+   list-style:none; 
+   width:55px; 
+   height:55px; 
+   border-radius:50%; 
+   overflow:hidden; 
+   border:.75px solid #fff; /* Adjusted border for cast images */
+}
+
+.details .cast ul li img {
+   width:100%; 
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+     width:8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+     background:#222222; /* Darker background for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+     background-color:#555555; /* Dark gray thumb for visibility */
+     border-radius:10px; /* Rounded edges for the thumb */
+}
+
+/* Card Sections Style Adjustments */
+.card-sections {
+    width: calc(100% - 40px); /* Full width minus padding on both sides */
+    height:auto ;/* Set to auto to allow dynamic height based on content*/
+    display:flex ;
+    overflow-x:auto ;/* Allow horizontal scrolling if needed*/
+    border-radius :8px ;
+    gap: 0px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between tags */
+}
+
+.tag {
+    background-color: transparent; /* Bootstrap primary color */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
