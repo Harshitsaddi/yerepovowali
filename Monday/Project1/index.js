@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const app = express();
-const todoRoutes = require('./routes/todos');
+const todoRoutes = require('./routes/data');
 
 app.use(express.json());
 
