@@ -11,7 +11,8 @@ router.post('/', (req, res) => {
         amount: req.body.amount
     };
     database.push(info);
-    res.send(info);
+    console.log("database:", database);
+    res.status(201).json(database);
 });
 
 module.exports = router;
