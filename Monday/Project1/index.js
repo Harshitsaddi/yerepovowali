@@ -1,12 +1,11 @@
-// server.js
 const express = require('express');
+const dataRouter = require('./routes/data');
 
 const app = express();
 
-
 app.use(express.json());
 
-
-app.listen(3000, () => {
-    console.log("Server running at http://localhost:3000");
+app.use('/api', dataRouter);
+app.listen(8080, () => {
+    console.log('local host 8080');
 });
