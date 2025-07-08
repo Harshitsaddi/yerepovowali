@@ -1,18 +1,19 @@
-// server.js
 const express = require('express');
 const app = express();
+const PORT = 3000;
+
+// Middleware to parse JSON
+app.use(express.json());
+
+// Route import
 const dataRoutes = require('./routes/data');
+app.use('/api/data', dataRoutes);
 
-app.use(express.json()); // To parse JSON body
-
+// Default GET route
 app.get('/', (req, res) => {
     res.send('Welcome to the Student API!');
 });
 
-// Use the route
-app.use('/api/data', dataRoutes);
-
-const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`✅ Server is running at http://localhost:${PORT}`);
 });
