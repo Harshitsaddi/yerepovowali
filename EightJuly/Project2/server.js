@@ -1,15 +1,15 @@
-// server.js
 const express = require('express');
 const app = express();
 const dataRoutes = require('./routes/data');
 
-app.use(express.json()); // To parse JSON body
+app.use(express.json()); // Required for JSON POST body
 
+// Default route
 app.get('/', (req, res) => {
     res.send('Welcome to the Student API!');
 });
 
-// Use the route
+// ✅ This means: POST requests to /api/data will go to routes/data.js
 app.use('/api/data', dataRoutes);
 
 const PORT = 3000;
