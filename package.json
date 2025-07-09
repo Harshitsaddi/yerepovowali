@@ -1,12 +1,16 @@
 {
   "name": "js-basics",
   "version": "1.0.0",
-  "main": "Js.js",
+  "main": "keshav.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
 }
