@@ -1,0 +1,20 @@
+{
+  "name": "js-basics",
+  "version": "1.0.0",
+  "main": "keshav.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+<<<<<<< HEAD:package.json
+    "express": "^5.1.0"
+=======
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+>>>>>>> 7f1fd9989fd7e351b11af4d8a1e4d488fbc7f53f:Basics/package.json
+  }
+}
