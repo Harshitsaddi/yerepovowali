@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+
 // In-memory array to hold student data
 const students = [];
 
@@ -33,4 +34,21 @@ app.get('/data', (req, res) => {
 // Start server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+});
+const express = require('express');
+const path = require('path');
+const app = express();
+
+const apiRoutes = require('./routes/api');
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api', apiRoutes);
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
