@@ -1,54 +1,32 @@
-const express = require('express');
+const fs = require('fs');
 const path = require('path');
-const app = express();
-const port = 3000;
 
+// Text data to write
+const studentData = `
+Name           | Roll Number | Course                 | Email ID
+---------------------------------------------------------------
+Amit Singh     | CS101       | Computer Science       | amit@gmail.com
+Neha           | IT102       | Information Technology | neha@gmail.com
+Vikram Patel   | CS103       | Data Science           | vikram@gmail.com
+Akash          | EC104       | Electronics Engineering| akash@gmail.com
+`;
 
-// In-memory array to hold student data
-const students = [];
+// Path to the output file
+const outputPath = path.join(__dirname, 'data', 'students.txt');
 
-// Middleware
-app.use(express.urlencoded({ extended: true })); // To parse form data
-app.use(express.static(path.join(__dirname, 'public'))); // To serve index.html
+// Ensure directory exists
+fs.mkdir(path.join(__dirname, 'data'), { recursive: true }, (err) => {
+    if (err) {
+        console.error("Error creating directory:", err);
+        return;
+    }
 
-// Routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.post('/data', (req, res) => {
-    const { name, roll } = req.body;
-    students.push({ name, roll });
-    res.redirect('/data'); // Redirect to list page after submit
-});
-
-app.get('/data', (req, res) => {
-    let html = `<h2>Submitted Students</h2><ul>`;
-    students.forEach(s => {
-        html += `<li>${s.name} - ${s.roll}</li>`;
+    // Write data to the file
+    fs.writeFile(outputPath, studentData, (err) => {
+        if (err) {
+            console.error("Error writing file:", err);
+        } else {
+            console.log("Student information saved to students.txt");
+        }
     });
-    html += `</ul><a href="/">Go Back</a>`;
-    res.send(html);
-});
-
-// Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
-const express = require('express');
-const path = require('path');
-
-
-const apiRoutes = require('./routes/api');
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/api', apiRoutes);
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
 });

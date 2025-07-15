@@ -1,0 +1,7 @@
+
+Name           | Roll Number | Course                 | Email ID
+---------------------------------------------------------------
+Amit Singh     | CS101       | Computer Science       | amit@gmail.com
+Neha           | IT102       | Information Technology | neha@gmail.com
+Vikram Patel   | CS103       | Data Science           | vikram@gmail.com
+Akash          | EC104       | Electronics Engineering| akash@gmail.com
