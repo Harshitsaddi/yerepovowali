@@ -1,0 +1,12 @@
+POST http://localhost:3000/users/add
+Content-Type: application/json
+
+{
+  "name": "Jaskaran",
+  "address": "Chandigarh, India",
+  "phone": "9876543210",
+  "pincode": "160036"
+}
+
+
+GET http://localhost:3000/users
