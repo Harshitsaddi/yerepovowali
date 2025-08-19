@@ -1,5 +1,6 @@
-POST http://localhost:3000/users/add
-Content-Type: application/json
+🔥 API Endpoints (CRUD)
+
+Add user → POST http://localhost:3000/users/add
 
 {
   "name": "Jaskaran",
@@ -9,4 +10,8 @@ Content-Type: application/json
 }
 
 
-GET http://localhost:3000/users
+Get all users → GET http://localhost:3000/users
+
+Update user by ID → PUT http://localhost:3000/users/<userId>
+
+Delete user by ID → DELETE http://localhost:3000/users/<userId>

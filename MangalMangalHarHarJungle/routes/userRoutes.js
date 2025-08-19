@@ -1,29 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+const userController = require("../controllers/usercontroller");
 
-// POST - Create user
-router.post("/add", async (req, res) => {
-  try {
-    const { name, address, phone, pincode } = req.body;
-
-    const newUser = new User({ name, address, phone, pincode });
-    await newUser.save();
-
-    res.status(201).json({ message: "User added successfully!", user: newUser });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
-// GET - Fetch all users
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// Routes connected to controllers
+router.post("/add", userController.addUser);
+router.get("/", userController.getUsers);
+router.put("/:id", userController.updateUser);
+router.delete("/:id", userController.deleteUser);
 
 module.exports = router;
