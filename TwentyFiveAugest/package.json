@@ -1,5 +1,5 @@
 {
-  "name": "yerepovowali",
+  "name": "twentyfiveaugest",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongoose": "^8.18.0"
-  },
-  "description": ""
+    "mongoose": "^8.18.0",
+    "nodemon": "^3.1.10"
+  }
 }
