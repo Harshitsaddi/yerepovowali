@@ -1,0 +1,48 @@
+. Get User Score
+
+👉 Endpoint:
+POST http://localhost:5000/api/auth/score
+
+👉 Request Body (JSON):
+
+{
+  "email": "john@example.com"
+}
+
+
+📌 This will look up the user in MongoDB by email and return their current score.
+
+👉 Example Response:
+
+{
+  "score": 50
+}
+
+2. Update User Score
+
+👉 Endpoint:
+PUT http://localhost:5000/api/auth/score
+
+👉 Request Body (JSON):
+
+{
+  "email": "john@example.com",
+  "score": 80
+}
+
+
+📌 This will set John’s score to 80.
+
+👉 Example Response:
+
+{
+  "message": "Score updated successfully",
+  "score": 80
+}
+
+
+⚡ Summary:
+
+POST /score → send only email → get user’s current score.
+
+PUT /score → send email + score → update user’s score.
