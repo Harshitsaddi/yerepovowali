@@ -34,6 +34,11 @@ const User = {
         const res = await pool.query("INSERT INTO orders(user_id,product,amount) VALUES($1, $2, $3) RETURNING * ",
             [user_id, product_name, amount]
         )
+        return res.rows[0]
+    },
+    async getByUsersAndOrders(){
+        const res = await pool.query("SELECT USERS.name, USERS.email,orders.product FROM USERS INNER JOIN orders")
+        return res.rows[0]
     }
 }
 module.exports = User;
