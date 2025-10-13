@@ -7,6 +7,16 @@ const createOrderService = async(user_id, product_name,amount) =>{
         throw err;
     }
 }
+const getUsersAndOrder = async ()=>{
+    try{
+        const joindata = await User.getByUsersAndOrders();
+        return joindata;
+
+    }catch(err){
+        throw err;
+    }
+}
 module.exports = {
-    createOrderService
+    createOrderService,
+    getUsersAndOrder
 }
