@@ -24,10 +24,13 @@ const loginController = async(req, res)=>{
     try{
         const{email, password} = req.body;
         if(!email || !password){
-            return res.status(400).json({messgae: 'email and password'})
+            return res.status(400).json({message: 'email and password'})
         }
         const user = await userService.loginUser(email,password)
         res.status(200).json(user)
+        console.log(
+            user
+        )
     }catch(err){
         res.status(500).json({message: 'internal server error', error:err});
     }
