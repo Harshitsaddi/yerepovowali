@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const questionsRoute = require('./routes/questions'); // adjust path if needed
+const questionsRoute = require('./routes/questiions');
 
 const app = express();
 
@@ -12,13 +12,9 @@ app.use(bodyParser.json());
 // Routes
 app.use('/questions', questionsRoute);
 
-// Default route
 app.get('/', (req, res) => {
-    res.send('Welcome to the Quiz API');
+    res.send('Quiz API is running!');
 });
 
-// Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
