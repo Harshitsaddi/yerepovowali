@@ -15,10 +15,7 @@ db.connect(err => {
         return;
     }
     console.log("MariaDB database connected!");
-});
-
-
-const createTableQuery = `
+    const createTableQuery = `
 CREATE TABLE IF NOT EXISTS questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     question TEXT NOT NULL,
@@ -29,6 +26,18 @@ CREATE TABLE IF NOT EXISTS questions (
     correct_option VARCHAR(255) NOT NULL
 );
 `;
+
+db.query.createTableQuery, (err)=>{
+    if(err){
+        console.log("table is not created",err.message);
+    }else{
+        console.log("table created");
+    }
+}
+});
+
+
+
 
 
 db.query(createTableQuery, (err, result) => {
